@@ -8,6 +8,8 @@ public class LoginResult extends Result {
 
     private String id;
 
+    private String name;
+
     @SerializedName("loginname")
     private String loginName;
 
@@ -28,6 +30,14 @@ public class LoginResult extends Result {
 
     public void setLoginName(String loginName) {
         this.loginName = loginName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAvatarUrl() { // 修复头像地址的历史遗留问题

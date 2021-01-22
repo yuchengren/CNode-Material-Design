@@ -100,7 +100,7 @@ public class MessageListAdapter extends RecyclerView.Adapter<MessageListAdapter.
             this.message = message;
 
             GlideApp.with(activity).load(message.getAuthor().getAvatarUrl()).placeholder(R.drawable.image_placeholder).into(imgAvatar);
-            tvFrom.setText(message.getAuthor().getLoginName());
+            tvFrom.setText(message.getAuthor().getName());
             tvTime.setText(FormatUtils.getRelativeTimeSpanString(message.getCreateAt()));
             tvTime.setTextColor(ResUtils.getThemeAttrColor(activity, message.isRead() ? android.R.attr.textColorSecondary : R.attr.colorAccent));
             badgeRead.setVisibility(message.isRead() ? View.GONE : View.VISIBLE);

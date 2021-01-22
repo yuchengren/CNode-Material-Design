@@ -11,18 +11,18 @@ import java.util.List;
 public enum Tab {
 
     all(R.string.app_name),
-
     good(R.string.tab_good),
 
-    unknown(R.string.tab_unknown),
-
+    common(R.string.tab_common),
     share(R.string.tab_share),
-
-    ask(R.string.tab_ask),
-
+    trade(R.string.tab_trade),
+    fun(R.string.tab_fun),
     job(R.string.tab_job),
+    advertising(R.string.tab_advertising),
+    notice(R.string.tab_notice),
 
-    dev(R.string.tab_dev);
+    dev(R.string.tab_dev),
+    unknown(R.string.tab_unknown);
 
     @StringRes
     private final int nameId;
@@ -38,12 +38,17 @@ public enum Tab {
 
     public static List<Tab> getPublishableTabList() {
         List<Tab> tabList = new ArrayList<>();
+
+        tabList.add(common);
+        tabList.add(share);
+        tabList.add(trade);
+        tabList.add(fun);
+        tabList.add(job);
+        tabList.add(advertising);
+        tabList.add(notice);
         if (BuildConfig.DEBUG) {
             tabList.add(dev);
         }
-        tabList.add(share);
-        tabList.add(ask);
-        tabList.add(job);
         return tabList;
     }
 

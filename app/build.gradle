@@ -5,11 +5,11 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        applicationId 'org.cnodejs.android.md'
+        applicationId 'com.ycrsky.jnf'
         minSdkVersion 14
         targetSdkVersion 28
         versionCode Integer.valueOf(new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC')))
-        versionName '1.4.1-dev.1'
+        versionName '1.0.0'
     }
 
     buildTypes {

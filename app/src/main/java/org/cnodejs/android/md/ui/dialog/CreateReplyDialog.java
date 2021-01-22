@@ -113,7 +113,7 @@ public class CreateReplyDialog extends AppCompatDialog implements ICreateReplyVi
         targetId = target.getId();
         layoutTarget.setVisibility(View.VISIBLE);
         tvTarget.setText(getContext().getString(R.string.reply___floor, targetPosition + 1));
-        edtContent.getText().insert(edtContent.getSelectionEnd(), "@" + target.getAuthor().getLoginName() + " ");
+        edtContent.getText().insert(edtContent.getSelectionEnd(), "@" + target.getAuthor().getName() + " ");
         showWindow();
     }
 

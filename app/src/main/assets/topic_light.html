@@ -25,7 +25,7 @@
                         <td class="center">
                             <div class="line1">
                                 <span v-bind:class="{'tag-accent': topic.top, 'tag-normal': !topic.top}">{{topic | tabName}}</span>
-                                <span class="loginname text-primary">{{topic.author.loginname}}</span>
+                                <span class="loginname text-primary">{{topic.author.name}}</span>
                             </div>
                             <div class="line2">
                                 <span class="create-time text-secondary">{{topic.create_at | relativeTimeSpan}}创建</span>
@@ -63,7 +63,7 @@
                                     </td>
                                     <td class="center">
                                         <div class="line1">
-                                            <span class="loginname text-primary">{{reply.author.loginname}}</span>
+                                            <span class="loginname text-primary">{{reply.author.name}}</span>
                                             <span class="tag-accent" v-if="topic.author.loginname === reply.author.loginname">作者</span>
                                         </div>
                                         <div class="line2">

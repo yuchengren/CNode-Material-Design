@@ -45,8 +45,8 @@ public class TopicHeader implements ITopicHeaderView {
     @BindView(R.id.ctv_tab)
     CheckedTextView ctvTab;
 
-    @BindView(R.id.tv_login_name)
-    TextView tvLoginName;
+    @BindView(R.id.tv_name)
+    TextView tvName;
 
     @BindView(R.id.tv_create_time)
     TextView tvCreateTime;
@@ -112,7 +112,7 @@ public class TopicHeader implements ITopicHeaderView {
             GlideApp.with(activity).load(topic.getAuthor().getAvatarUrl()).placeholder(R.drawable.image_placeholder).into(imgAvatar);
             ctvTab.setText(topic.isTop() ? R.string.tab_top : topic.getTab().getNameId());
             ctvTab.setChecked(topic.isTop());
-            tvLoginName.setText(topic.getAuthor().getLoginName());
+            tvName.setText(topic.getAuthor().getName());
             tvCreateTime.setText(activity.getString(R.string.__create, FormatUtils.getRelativeTimeSpanString(topic.getCreateAt())));
             tvVisitCount.setText(activity.getString(R.string.__count_visit, topic.getVisitCount()));
             btnFavorite.setImageResource(isCollect ? R.drawable.ic_favorite_theme_24dp : R.drawable.ic_favorite_outline_grey600_24dp);

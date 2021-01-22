@@ -118,7 +118,7 @@ public class TopicListAdapter extends RecyclerView.Adapter<TopicListAdapter.View
             tvTitle.setText(topic.getTitle());
             tvSummary.setText(topic.getContentSummary());
             GlideApp.with(activity).load(topic.getAuthor().getAvatarUrl()).placeholder(R.drawable.image_placeholder).into(imgAvatar);
-            tvAuthor.setText(topic.getAuthor().getLoginName());
+            tvAuthor.setText(topic.getAuthor().getName());
             tvCreateTime.setText(activity.getString(R.string.create_at__, topic.getCreateAt().toString("yyyy-MM-dd HH:mm:ss")));
             iconGood.setVisibility(topic.isGood() ? View.VISIBLE : View.GONE);
         }

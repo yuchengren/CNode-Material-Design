@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.takwolf.android.hfrecyclerview.HeaderAndFooterRecyclerView;
 
-import org.cnodejs.android.md.BuildConfig;
 import org.cnodejs.android.md.R;
 import org.cnodejs.android.md.model.entity.Tab;
 import org.cnodejs.android.md.model.entity.Topic;
@@ -64,8 +63,8 @@ public class MainActivity extends FullLayoutActivity implements IMainView, IBack
     @BindView(R.id.img_avatar)
     ImageView imgAvatar;
 
-    @BindView(R.id.tv_login_name)
-    TextView tvLoginName;
+    @BindView(R.id.tv_name)
+    TextView tvName;
 
     @BindView(R.id.tv_score)
     TextView tvScore;
@@ -86,9 +85,13 @@ public class MainActivity extends FullLayoutActivity implements IMainView, IBack
     @BindViews({
             R.id.btn_nav_all,
             R.id.btn_nav_good,
+            R.id.btn_nav_common,
             R.id.btn_nav_share,
-            R.id.btn_nav_ask,
+            R.id.btn_nav_trade,
+            R.id.btn_nav_fun,
             R.id.btn_nav_job,
+            R.id.btn_nav_advertising,
+            R.id.btn_nav_notice,
             R.id.btn_nav_dev
     })
     List<NavigationItem> navMainItemList;
@@ -136,7 +139,8 @@ public class MainActivity extends FullLayoutActivity implements IMainView, IBack
         toolbar.setNavigationOnClickListener(new NavigationOpenClickListener(drawerLayout));
         toolbar.setOnClickListener(new DoubleClickBackToContentTopListener(this));
 
-        navItemDev.setVisibility(BuildConfig.DEBUG ? View.VISIBLE : View.GONE);
+//        navItemDev.setVisibility(BuildConfig.DEBUG ? View.VISIBLE : View.GONE);
+        navItemDev.setVisibility(View.GONE);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         loadMoreFooter = new LoadMoreFooter(this, recyclerView, this);
@@ -188,14 +192,26 @@ public class MainActivity extends FullLayoutActivity implements IMainView, IBack
                         case R.id.btn_nav_good:
                             tab = Tab.good;
                             break;
+                        case R.id.btn_nav_common:
+                            tab = Tab.common;
+                            break;
                         case R.id.btn_nav_share:
                             tab = Tab.share;
                             break;
-                        case R.id.btn_nav_ask:
-                            tab = Tab.ask;
+                        case R.id.btn_nav_trade:
+                            tab = Tab.trade;
+                            break;
+                        case R.id.btn_nav_fun:
+                            tab = Tab.fun;
                             break;
                         case R.id.btn_nav_job:
                             tab = Tab.job;
+                            break;
+                        case R.id.btn_nav_advertising:
+                            tab = Tab.advertising;
+                            break;
+                        case R.id.btn_nav_notice:
+                            tab = Tab.notice;
                             break;
                         case R.id.btn_nav_dev:
                             tab = Tab.dev;
@@ -224,9 +240,13 @@ public class MainActivity extends FullLayoutActivity implements IMainView, IBack
     @OnClick({
             R.id.btn_nav_all,
             R.id.btn_nav_good,
+            R.id.btn_nav_common,
             R.id.btn_nav_share,
-            R.id.btn_nav_ask,
+            R.id.btn_nav_trade,
+            R.id.btn_nav_fun,
             R.id.btn_nav_job,
+            R.id.btn_nav_advertising,
+            R.id.btn_nav_notice,
             R.id.btn_nav_dev
     })
     void onMainNavigationItemClick(NavigationItem itemView) {
@@ -395,12 +415,12 @@ public class MainActivity extends FullLayoutActivity implements IMainView, IBack
     public void updateUserInfoViews() {
         if (TextUtils.isEmpty(LoginShared.getAccessToken(this))) {
             GlideApp.with(this).load(R.drawable.image_placeholder).placeholder(R.drawable.image_placeholder).into(imgAvatar);
-            tvLoginName.setText(R.string.click_avatar_to_login);
+            tvName.setText(R.string.click_avatar_to_login);
             tvScore.setText(null);
             btnLogout.setVisibility(View.GONE);
         } else {
             GlideApp.with(this).load(LoginShared.getAvatarUrl(this)).placeholder(R.drawable.image_placeholder).into(imgAvatar);
-            tvLoginName.setText(LoginShared.getLoginName(this));
+            tvName.setText(LoginShared.getName(this));
             tvScore.setText(getString(R.string.score__, LoginShared.getScore(this)));
             btnLogout.setVisibility(View.VISIBLE);
         }

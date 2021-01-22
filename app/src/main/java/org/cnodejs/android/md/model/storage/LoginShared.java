@@ -17,33 +17,40 @@ public final class LoginShared {
     private static final String KEY_ACCESS_TOKEN = "accessToken";
     private static final String KEY_ID = "id";
     private static final String KEY_LOGIN_NAME = "loginName";
+    private static final String KEY_NAME = "name";
     private static final String KEY_AVATAR_URL = "avatarUrl";
     private static final String KEY_SCORE = "score";
 
     private static String accessToken;
     private static String id;
     private static String loginName;
+    private static String name;
     private static String avatarUrl;
     private static Integer score;
+
 
     public static void login(@NonNull Context context, @NonNull String accessToken, @NonNull LoginResult loginResult) {
         SharedUtils.with(context, TAG)
                 .setString(KEY_ACCESS_TOKEN, accessToken)
                 .setString(KEY_ID, loginResult.getId())
                 .setString(KEY_LOGIN_NAME, loginResult.getLoginName())
+                .setString(KEY_NAME, loginResult.getName())
                 .setString(KEY_AVATAR_URL, loginResult.getAvatarUrl());
         LoginShared.accessToken = accessToken;
         id = loginResult.getId();
         loginName = loginResult.getLoginName();
+        name = loginResult.getName();
         avatarUrl = loginResult.getAvatarUrl();
     }
 
     public static void update(@NonNull Context context, @NonNull User user) {
         SharedUtils.with(context, TAG)
                 .setString(KEY_LOGIN_NAME, user.getLoginName())
+                .setString(KEY_NAME, user.getName())
                 .setString(KEY_AVATAR_URL, user.getAvatarUrl())
                 .setInt(KEY_SCORE, user.getScore());
         loginName = user.getLoginName();
+        name = user.getName();
         avatarUrl = user.getAvatarUrl();
         score = user.getScore();
     }
@@ -53,6 +60,7 @@ public final class LoginShared {
         accessToken = null;
         id = null;
         loginName = null;
+        name = null;
         avatarUrl = null;
         score = null;
     }
@@ -76,6 +84,13 @@ public final class LoginShared {
             loginName = SharedUtils.with(context, TAG).getString(KEY_LOGIN_NAME, null);
         }
         return loginName;
+    }
+
+    public static String getName(@NonNull Context context) {
+        if (TextUtils.isEmpty(name)) {
+            name = SharedUtils.with(context, TAG).getString(KEY_NAME, null);
+        }
+        return name;
     }
 
     public static String getAvatarUrl(@NonNull Context context) {

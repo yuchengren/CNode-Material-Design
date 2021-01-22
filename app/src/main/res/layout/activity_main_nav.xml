@@ -51,7 +51,7 @@
                         android:src="@drawable/image_placeholder" />
 
                     <TextView
-                        android:id="@+id/tv_login_name"
+                        android:id="@+id/tv_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -127,6 +127,15 @@
             app:title="@string/tab_good" />
 
         <org.cnodejs.android.md.ui.widget.NavigationItem
+            android:id="@+id/btn_nav_common"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            app:iconNormal="@drawable/ic_forum_grey600_24dp"
+            app:iconChecked="@drawable/ic_forum_theme_24dp"
+            app:title="@string/tab_common" />
+
+        <org.cnodejs.android.md.ui.widget.NavigationItem
             android:id="@+id/btn_nav_share"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -136,13 +145,22 @@
             app:title="@string/tab_share" />
 
         <org.cnodejs.android.md.ui.widget.NavigationItem
-            android:id="@+id/btn_nav_ask"
+            android:id="@+id/btn_nav_trade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:foreground="?attr/selectableItemBackground"
-            app:iconNormal="@drawable/ic_face_grey600_24dp"
-            app:iconChecked="@drawable/ic_face_theme_24dp"
-            app:title="@string/tab_ask" />
+            app:iconNormal="@drawable/ic_forum_grey600_24dp"
+            app:iconChecked="@drawable/ic_forum_theme_24dp"
+            app:title="@string/tab_trade" />
+
+        <org.cnodejs.android.md.ui.widget.NavigationItem
+            android:id="@+id/btn_nav_fun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            app:iconNormal="@drawable/ic_forum_grey600_24dp"
+            app:iconChecked="@drawable/ic_forum_theme_24dp"
+            app:title="@string/tab_fun" />
 
         <org.cnodejs.android.md.ui.widget.NavigationItem
             android:id="@+id/btn_nav_job"
@@ -152,6 +170,24 @@
             app:iconNormal="@drawable/ic_work_grey600_24dp"
             app:iconChecked="@drawable/ic_work_theme_24dp"
             app:title="@string/tab_job" />
+
+        <org.cnodejs.android.md.ui.widget.NavigationItem
+            android:id="@+id/btn_nav_advertising"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            app:iconNormal="@drawable/ic_forum_grey600_24dp"
+            app:iconChecked="@drawable/ic_forum_theme_24dp"
+            app:title="@string/tab_advertising" />
+
+        <org.cnodejs.android.md.ui.widget.NavigationItem
+            android:id="@+id/btn_nav_notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            app:iconNormal="@drawable/ic_forum_grey600_24dp"
+            app:iconChecked="@drawable/ic_forum_theme_24dp"
+            app:title="@string/tab_notice" />
 
         <org.cnodejs.android.md.ui.widget.NavigationItem
             android:id="@+id/btn_nav_dev"

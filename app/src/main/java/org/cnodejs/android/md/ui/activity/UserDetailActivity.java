@@ -80,8 +80,8 @@ public class UserDetailActivity extends StatusBarActivity implements IUserDetail
     @BindView(R.id.img_avatar)
     ImageView imgAvatar;
 
-    @BindView(R.id.tv_login_name)
-    TextView tvLoginName;
+    @BindView(R.id.tv_name)
+    TextView tvName;
 
     @BindView(R.id.tv_github_username)
     TextView tvGithubUsername;
@@ -121,7 +121,7 @@ public class UserDetailActivity extends StatusBarActivity implements IUserDetail
         tabLayout.setupWithViewPager(viewPager);
 
         loginName = getIntent().getStringExtra(EXTRA_LOGIN_NAME);
-        tvLoginName.setText(loginName);
+//        tvName.setText(loginName);
 
         String avatarUrl = getIntent().getStringExtra(EXTRA_AVATAR_URL);
         if (!TextUtils.isEmpty(avatarUrl)) {
@@ -158,7 +158,7 @@ public class UserDetailActivity extends StatusBarActivity implements IUserDetail
     @Override
     public void onGetUserOk(@NonNull User user) {
         GlideApp.with(this).load(user.getAvatarUrl()).placeholder(R.drawable.image_placeholder).into(imgAvatar);
-        tvLoginName.setText(user.getLoginName());
+        tvName.setText(user.getName());
         if (TextUtils.isEmpty(user.getGithubUsername())) {
             tvGithubUsername.setVisibility(View.INVISIBLE);
             tvGithubUsername.setText(null);

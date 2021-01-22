@@ -50,6 +50,7 @@ public class CreateReplyPresenter implements ICreateReplyPresenter {
                     reply.setId(result.getReplyId());
                     Author author = new Author();
                     author.setLoginName(LoginShared.getLoginName(activity));
+                    author.setName(LoginShared.getName(activity));
                     author.setAvatarUrl(LoginShared.getAvatarUrl(activity));
                     reply.setAuthor(author);
                     reply.setContentFromLocal(finalContent); // 这里要使用本地的访问器

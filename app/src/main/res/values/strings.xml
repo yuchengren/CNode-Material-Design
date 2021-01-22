@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">CNode社区</string>
-    <string name="app_domain">cnodejs.org</string>
-    <string name="app_slogan">Node.js专业中文社区</string>
+    <string name="app_name">江南府社区</string>
+    <string name="app_domain">jnf.ycrsky.com</string>
+    <string name="app_slogan">江南府社区</string>
 
     <string name="tab_top">置顶</string>
     <string name="tab_all">全部</string>
     <string name="tab_good">精华</string>
-    <string name="tab_unknown">未知</string>
+    <string name="tab_common">交流</string>
     <string name="tab_share">分享</string>
-    <string name="tab_ask">问答</string>
+    <string name="tab_trade">交易</string>
+    <string name="tab_fun">娱乐</string>
     <string name="tab_job">招聘</string>
+    <string name="tab_advertising">广告</string>
+    <string name="tab_notice">公示</string>
     <string name="tab_dev">测试</string>
+    <string name="tab_unknown">未知</string>
 
     <string name="notification">消息</string>
     <string name="setting">设置</string>
@@ -83,12 +87,12 @@
     <string name="go_to_setting">去设置</string>
     <string name="qr_code_tip">将二维码放入扫描框内</string>
     <string name="_how_to_get_access_token_"><u>如何获取 Access Token ？</u></string>
-    <string name="how_to_get_access_token_tip_content">在CNode社区网站端登录你的账户，然后在右上角找到「设置」按钮，点击进入后将页面滑动到最底部来查看你的 Access Token 。</string>
+    <string name="how_to_get_access_token_tip_content">在江南府社区网站端登录你的账户，然后在右上角找到「设置」按钮，点击进入后将页面滑动到最底部来查看你的 Access Token 。</string>
 
     <string name="current_version">当前版本</string>
     <string name="open_source_url">项目开源主页</string>
     <string name="open_source_url_content">https://github.com/TakWolf/CNode-Material-Design</string>
-    <string name="about_cnode">关于CNode社区</string>
+    <string name="about_cnode">关于江南府社区</string>
     <string name="about_cnode_content">https://cnodejs.org/about</string>
     <string name="about_author">关于作者</string>
     <string name="about_author_content">http://blog.takwolf.com/about</string>

@@ -9,6 +9,8 @@ import java.util.List;
 
 public class User {
 
+    private String name;
+
     @SerializedName("loginname")
     private String loginName;
 
@@ -27,6 +29,14 @@ public class User {
 
     @SerializedName("recent_replies")
     private List<TopicSimple> recentReplyList;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getLoginName() {
         return loginName;

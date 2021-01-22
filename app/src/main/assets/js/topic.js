@@ -16,12 +16,20 @@ Vue.filter('tabName', function (topic) {
         return '置顶';
     } else {
         switch (topic.tab) {
+            case 'common':
+                return '交流';
             case 'share':
                 return '分享';
-            case 'ask':
-                return '问答';
+            case 'trade':
+                return '交易';
+            case 'fun':
+                return '娱乐';
             case 'job':
                 return '招聘';
+            case 'advertising':
+                return '广告';
+            case 'notice':
+                return '公示';
             case 'dev':
                 return '测试';
             default:

@@ -114,8 +114,8 @@ public class ReplyListAdapter extends RecyclerView.Adapter<ReplyListAdapter.View
         @BindView(R.id.img_avatar)
         ImageView imgAvatar;
 
-        @BindView(R.id.tv_login_name)
-        TextView tvLoginName;
+        @BindView(R.id.tv_name)
+        TextView tvName;
 
         @BindView(R.id.icon_author)
         View iconAuthor;
@@ -152,7 +152,7 @@ public class ReplyListAdapter extends RecyclerView.Adapter<ReplyListAdapter.View
             reply = replyList.get(position);
 
             GlideApp.with(activity).load(reply.getAuthor().getAvatarUrl()).placeholder(R.drawable.image_placeholder).into(imgAvatar);
-            tvLoginName.setText(reply.getAuthor().getLoginName());
+            tvName.setText(reply.getAuthor().getName());
             iconAuthor.setVisibility(TextUtils.equals(authorLoginName, reply.getAuthor().getLoginName()) ? View.VISIBLE : View.GONE);
             tvIndex.setText(activity.getString(R.string.__floor, position + 1));
             tvCreateTime.setText(FormatUtils.getRelativeTimeSpanString(reply.getCreateAt()));

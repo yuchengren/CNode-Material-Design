@@ -64,8 +64,8 @@ public class TopicSimpleListAdapter extends RecyclerView.Adapter<TopicSimpleList
         @BindView(R.id.tv_title)
         TextView tvTitle;
 
-        @BindView(R.id.tv_login_name)
-        TextView tvLoginName;
+        @BindView(R.id.tv_name)
+        TextView tvName;
 
         @BindView(R.id.tv_last_reply_time)
         TextView tvLastReplyTime;
@@ -88,7 +88,7 @@ public class TopicSimpleListAdapter extends RecyclerView.Adapter<TopicSimpleList
 
             tvTitle.setText(topicSimple.getTitle());
             GlideApp.with(activity).load(topicSimple.getAuthor().getAvatarUrl()).placeholder(R.drawable.image_placeholder).into(imgAvatar);
-            tvLoginName.setText(topicSimple.getAuthor().getLoginName());
+            tvName.setText(topicSimple.getAuthor().getName());
             tvLastReplyTime.setText(FormatUtils.getRelativeTimeSpanString(topicSimple.getLastReplyAt()));
             iconDeepLine.setVisibility(isTheLast ? View.GONE : View.VISIBLE);
             iconShadowGap.setVisibility(isTheLast ? View.VISIBLE : View.GONE);

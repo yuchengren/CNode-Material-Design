@@ -110,7 +110,7 @@ public class TopicActivity extends StatusBarActivity implements ITopicView, IBac
         switch (item.getItemId()) {
             case R.id.action_share:
                 if (topic != null) {
-                    Navigator.openShare(this, "《" + topic.getTitle() + "》\n" + ApiDefine.TOPIC_LINK_URL_PREFIX + topicId + "\n—— 来自CNode社区");
+                    Navigator.openShare(this, "《" + topic.getTitle() + "》\n" + ApiDefine.TOPIC_LINK_URL_PREFIX + topicId + "\n—— 来自江南府社区");
                 }
                 return true;
             default:

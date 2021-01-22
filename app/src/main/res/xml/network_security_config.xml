@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--允许明文请求，防止后台或者三方sdk有http的请求而导致请求失败-->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <!--所有请求都信任系统预装CA-->
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <!--当构建变量中含有 android:debuggable="true" 时，信任用户自安装CA-->
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="user" />
+            <certificates src="system" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>
