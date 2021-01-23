@@ -12,7 +12,8 @@
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppThemeLight">
+        android:theme="@style/AppThemeLight"
+        android:testOnly="false">
 
         <activity
             android:name="org.cnodejs.android.md.ui.activity.LaunchActivity"

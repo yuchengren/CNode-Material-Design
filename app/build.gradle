@@ -30,6 +30,14 @@ android {
         abortOnError false
     }
 
+    //apk输出文件重命名
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+//            outputFileName = "jnf-${variant.versionName}-${flavorName}-${variant.buildType.name}.apk"
+            outputFileName = "jnf-${variant.buildType.name}.apk"
+        }
+    }
+
 }
 
 dependencies {
