@@ -44,7 +44,8 @@
     <!-- App Theme Launch -->
 
     <style name="AppThemeLaunch" parent="BaseAppThemeLight">
-        <item name="android:windowBackground">@color/color_primary</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
     <!-- App Dialog Light -->

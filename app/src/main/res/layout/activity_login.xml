@@ -36,12 +36,9 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="48dp"
-            android:paddingRight="48dp"
-            android:src="@drawable/logo_light"
-            android:scaleType="fitCenter"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@mipmap/logo_large"
             android:adjustViewBounds="true" />
 
         <TextView
